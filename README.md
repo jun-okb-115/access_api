@@ -37,7 +37,7 @@ Ajaxを使用してAPIにアクセス<br>
 ```
 <br>
 application/controllers/welcome.php<br>
-ロジック、curlモジュールのGET、POSTでアクセス<br>
+curlモジュールのGET、POSTでアクセス<br>
 <br>
 
 
