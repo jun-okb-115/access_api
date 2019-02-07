@@ -39,9 +39,11 @@ Ajaxを使用してAPIにアクセス<br>
 application/controllers/welcome.php<br>
 ロジック、curlモジュールのGET、POSTでアクセス<br>
 <br>
-```
+
+`
+
 public function curl_get()
-   {
+{
       $base_url = 'http://web/test/json_hello/';
       $id = 1;
 
@@ -61,8 +63,12 @@ public function curl_get()
       var_dump($response);
 
       curl_close($curl);
-    }
+}
 
+`
+
+
+```
 public function curl_post()
    {
       $base_url = 'http://web/test/json_hello';
