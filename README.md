@@ -13,7 +13,9 @@ docker<br> nginx<br>
 <br>
 application/views/get_api.php<br>
 Ajaxを使用してAPIにアクセス<br>
- ```<script src="../../jquery.js"></script>
+
+```
+ <script src="../../jquery.js"></script>
     <script>
         $(function() {
             $('.submit').on('click', function(){
@@ -32,6 +34,58 @@ Ajaxを使用してAPIにアクセス<br>
             });
         });
     </script>
-    
-   vff
+```
+<br>
+application/controllers/welcome.php<br>
+curlモジュールのGET、POSTでアクセス<br>
+```
+    public function curl_get()
+    {
+        $base_url = 'http://web/test/json_hello/';
+        $id = 1;
 
+        $curl = curl_init();
+
+        $option = [
+                    CURLOPT_URL => $base_url.$id,
+                    CURLOPT_RETURNTRANSFER => true,
+                    CURLOPT_SSL_VERIFYPEER => false,
+                    CURLOPT_SSL_VERIFYHOST => false
+                  ];
+
+        curl_setopt_array($curl, $option);
+
+        header('Content-Type: application/json; charset=utf-8');
+        $response = curl_exec($curl);
+        var_dump($response);
+
+        curl_close($curl);
+    }
+
+    public function curl_post()
+    {
+        $base_url = 'http://web/test/json_hello';
+        // $base_url = 'http://web/try/';
+
+        $data = ['id' => 2];
+
+        $curl = curl_init();
+
+        $option = [
+                    CURLOPT_URL => $base_url,
+                    CURLOPT_RETURNTRANSFER => true,
+                    CURLOPT_SSL_VERIFYPEER => false,
+                    CURLOPT_SSL_VERIFYHOST => false,
+                    CURLOPT_POST => true,
+                    CURLOPT_POSTFIELDS => http_build_query($data),
+                    CURLOPT_FOLLOWLOCATION => true
+                  ];
+
+        curl_setopt_array($curl, $option);
+
+        $response = (array)json_decode(curl_exec($curl));
+        var_dump($response);
+        extract($response);
+        echo $text;
+    }
+```
