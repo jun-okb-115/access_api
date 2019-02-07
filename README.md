@@ -66,7 +66,7 @@ public function curl_get()
 }
 
 ```
-POSTで叩く
+同じくPOSTで叩く
 ```
 public function curl_post()
 {
