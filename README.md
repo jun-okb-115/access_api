@@ -40,8 +40,8 @@ application/controllers/welcome.php<br>
 ロジック、curlモジュールのGET、POSTでアクセス<br>
 <br>
 
-`
 
+```
 public function curl_get()
 {
       $base_url = 'http://web/test/json_hello/';
@@ -65,8 +65,7 @@ public function curl_get()
       curl_close($curl);
 }
 
-
-
+```
 
 ```
 public function curl_post()
