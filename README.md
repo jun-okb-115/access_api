@@ -65,12 +65,12 @@ public function curl_get()
       curl_close($curl);
 }
 
-`
+
 
 
 ```
 public function curl_post()
-   {
+{
       $base_url = 'http://web/test/json_hello';
       // $base_url = 'http://web/try/';
 
@@ -94,6 +94,6 @@ public function curl_post()
       var_dump($response);
       extract($response);
       echo $text;
-  }
+}
     
 ```
