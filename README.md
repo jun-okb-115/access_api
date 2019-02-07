@@ -37,7 +37,8 @@ Ajaxを使用してAPIにアクセス<br>
 ```
 <br>
 application/controllers/welcome.php<br>
-curlモジュールのGET、POSTでアクセス<br>
+ロジック、curlモジュールのGET、POSTでアクセス<br>
+<br>
 ```
     public function curl_get()
     {
@@ -88,4 +89,5 @@ curlモジュールのGET、POSTでアクセス<br>
         extract($response);
         echo $text;
     }
+    
 ```
