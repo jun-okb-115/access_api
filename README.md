@@ -1,6 +1,6 @@
 # access_api
 
-非同期であるjqueryのajaxとPHPのモジュールcurlで自作したAPIを叩く。
+jqueryのajaxとPHPcurlで自作したAPIを叩く。
 
 使用環境<br><br>
 
